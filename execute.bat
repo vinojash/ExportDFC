@@ -1,0 +1,1 @@
+java -Dfile.encoding=Cp1252 -classpath bin;dfc;jars/shared/*;jars/poi5.2.2/*; com.export.Target

@@ -1,5 +1,6 @@
 package com.export;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -16,14 +17,15 @@ import com.documentum.fc.common.DfLogger;
 
 public class BulkExport {
 	private SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss");
-
-	private String excelPath = "Export/metadata/Report " + formatter.format(new Date()) + ".xlsx";
+	private String currentDate = formatter.format(new Date());
+	private String excelPath = "Export/Report_" + this.currentDate + ".xlsx";
 	private XSSFWorkbook workbook = new XSSFWorkbook();
 	private XSSFSheet sheet = workbook.createSheet("Metadata");
 	private SessionDFC sessionDFC = null;
 
 	public BulkExport(SessionDFC sessionDFC) {
 		this.sessionDFC = sessionDFC;
+		new File("Export/content_" + this.currentDate).mkdirs();
 	}
 
 	public void execute(String query) {
@@ -34,7 +36,7 @@ public class BulkExport {
 			coll = dfQuery.execute(this.sessionDFC.getSession(), IDfQuery.DF_READ_QUERY);
 			Boolean insertColumnName = true;
 			while (coll.next()) {
-				new ContentDFC(sessionDFC).export("Export/content", coll);
+				new ContentDFC(sessionDFC).export("Export/content_" + this.currentDate, coll);
 				this.sheet = new MetaDataDFC(sessionDFC).export("Export/metadata", coll, sheet, insertColumnName);
 				insertColumnName = false;
 			}

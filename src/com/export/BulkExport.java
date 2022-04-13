@@ -43,7 +43,7 @@ public class BulkExport {
 				coll.close();
 			}
 		} catch (DfException e) {
-			e.printStackTrace();
+			DfLogger.info(BulkExport.class, e.getStackTraceAsString(), null, null);
 		} finally {
 			try {
 				FileOutputStream outputStream = new FileOutputStream(this.excelPath);

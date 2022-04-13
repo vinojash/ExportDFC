@@ -5,6 +5,7 @@ public class Query {
 	private String attributes;
 	private String whereCondition;
 	private String resultCount;
+	private String dqlFullQuery;
 
 	public String getObjectType() {
 		return objectType;
@@ -39,6 +40,10 @@ public class Query {
 	}
 
 	public String query() {
+		if (!dqlFullQuery.isEmpty()) {
+			return this.dqlFullQuery;
+		}
+
 		String query = "SELECT ";
 		if (attributes != null && attributes != "*" && !attributes.isEmpty()) {
 			query = query + attributes + " ";
@@ -56,5 +61,13 @@ public class Query {
 		}
 		query = query + ";";
 		return query;
+	}
+
+	public String getDqlFullQuery() {
+		return dqlFullQuery;
+	}
+
+	public void setDqlFullQuery(String dqlFullQuery) {
+		this.dqlFullQuery = dqlFullQuery;
 	}
 }

@@ -1,1 +1,1 @@
-java -Dfile.encoding=Cp1252 -classpath bin;dfc;jars/shared/*;jars/poi5.2.2/*; com.export.Target
+java -Dfile.encoding=Cp1252 -classpath bin;dfc;jars/shared/*;jars/poi5.2.2/*;jars/apache-log4j-2.17.2-bin/*; com.export.Target

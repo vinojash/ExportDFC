@@ -1,0 +1,27 @@
+2022-04-13 12:28:12 INFO  Target:24 - Constructed query : SELECT r_object_id , object_name, r_creation_date, a_content_type, r_content_size, r_object_type, idsap FROM t_record WHERE r_object_type <> 't_record_wo_perseo' And (idsap = '006102145679' or object_name = '006102145679' or object_name = '006102145679 .pdf') UNION SELECT r_object_id , object_name, r_creation_date, a_content_type, r_content_size, r_object_type, idsap FROM t_aircraft WHERE r_object_type <> 't_record_wo_perseo' And (idsap = '006102145679' or object_name = '006102145679' or object_name = '006102145679 .pdf') UNION SELECT r_object_id , object_name, r_creation_date, a_content_type, r_content_size, r_object_type, idsap FROM t_record_wo_perseo WHERE (idsap = '006102145679' or as_wo_perseo = '006102145679') 
+2022-04-13 12:28:13 INFO  JKSKeystoreUtilForDfc:57 - keystore file name is D:\GIT\ExportDFC\dfc\dfc.keystore
+2022-04-13 12:28:13 INFO  InitializeKeystoreForDfc:71 - [DFC_SECURITY_IDENTITY_LOADED] Loaded identity from keystore, DFC alias=dfc, identity=dfc_aMvDhkhN9u7rOVBqex4IFdOJzqca
+2022-04-13 12:28:13 INFO  AuthenticationMgr:50 - identity for authentication is dfc_aMvDhkhN9u7rOVBqex4IFdOJzqca
+2022-04-13 12:28:13 INFO  RuntimeContext:185 - DFC Version is 6.6.0.039
+2022-04-13 12:28:13 INFO  ClassCacheManager$CacheCleanupTask:593 - [DFC_BOF_RUNNING_CLEANUP] Running class cache cleanup task
+2022-04-13 12:28:13 WARN  RegistrationMgr:39 - [DFC_SECURITY_GR_PUBLICATION_FAILED] Publication of DFC instance with global registry failed
+DfException:: THREAD: main; MSG: [DFC_BOF_GLOBAL_REGISTRY_NOT_CONFIGURED] A global registry is not configured; ERRORCODE: ff; NEXT: null
+	at com.documentum.fc.client.security.impl.DfcIdentityPublisher.<init>(DfcIdentityPublisher.java:51)
+	at com.documentum.fc.client.security.internal.RegistrationMgr.register(RegistrationMgr.java:34)
+	at com.documentum.fc.impl.RuntimeContext.<clinit>(RuntimeContext.java:191)
+	at com.documentum.fc.client.DfClient.<clinit>(DfClient.java:721)
+	at com.documentum.com.DfClientX.getLocalClient(DfClientX.java:43)
+	at com.export.SessionDFC.getSession(SessionDFC.java:36)
+	at com.export.SessionDFC.<init>(SessionDFC.java:14)
+	at com.export.Target.main(Target.java:26)
+2022-04-13 12:28:14 INFO  DocbaseConnection:375 - Object protocol version 2
+2022-04-13 12:28:15 INFO  AuthenticationMgr:448 - new identity bundle <dfc_aMvDhkhN9u7rOVBqex4IFdOJzqca	1649833095	prodc.ib		HgyrbnTaV94K/yk8YRCEeUrsWglJ5Up3E95vVCjXEZ252BV4M55MRvIwYcpd34rK2Yye9lO3J5b/ue3ju9QcwkjQuCL4fty/xyy+Zj7iwhOgRaSAsSrczQ4n3T8VaWPxNWT99VdlNNLpGh0qZiyKgRKeCF/LjeBNq4Kf3WPv2NU=>
+2022-04-13 12:28:16 INFO  SessionDFC:45 - Session created..!
+2022-04-13 12:28:46 INFO  ContentDFC:48 - Exported File :  Export/content/09015b7c83b5c41d.pdf
+2022-04-13 12:28:46 INFO  MetaDataDFC:40 - Row Title inserted in excel file..!
+2022-04-13 12:28:46 INFO  MetaDataDFC:50 - New Row value inserted for the object id 09015b7c83b5c41d
+2022-04-13 12:28:52 INFO  ContentDFC:48 - Exported File :  Export/content/09015b7c83c2dae4.pdf
+2022-04-13 12:28:52 INFO  MetaDataDFC:50 - New Row value inserted for the object id 09015b7c83c2dae4
+2022-04-13 12:28:53 INFO  BulkExport:52 - Excel report saved at Export/metadata/Report 13-04-2022 12-28-16.xlsx
+2022-04-13 12:28:53 INFO  SessionDFC:58 - Session released..!
+2022-04-13 12:28:53 INFO  Target:32 - Export operation completed..!

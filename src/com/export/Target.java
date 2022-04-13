@@ -19,7 +19,7 @@ public class Target {
 		q.setObjectType(p.getProperty("queryObjectType"));
 		q.setWhereCondition(p.getProperty("queryWhereCondition"));
 		q.setResultCount(p.getProperty("queryResultCount"));
-		q.setDqlFullQuery("dqlFullQuery");
+		q.setDqlFullQuery(p.getProperty("dqlFullQuery"));
 
 		DfLogger.info(Target.class, "Constructed query : {0}", new String[] { q.query() }, null);
 
